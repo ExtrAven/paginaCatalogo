@@ -28,7 +28,7 @@ SECRET_KEY = "so3y%kv-$+k$_uerfxhgth^-^^i5x=f^evy1%w*yl-=f%ee@+k"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "ExtrAven.pythonanywhere.com."]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "magency.pythonanywhere.com"]
 
 
 # Application definition
@@ -119,6 +119,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "main_app/static")]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
