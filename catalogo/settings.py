@@ -11,9 +11,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 import os
+from email.policy import default
 from pathlib import Path
-
-import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "so3y%kv-$+k$_uerfxhgth^-^^i5x=f^evy1%w*yl-=f%ee@+k"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "ExtrAven.pythonanywhere.com."]
 
@@ -78,10 +77,14 @@ WSGI_APPLICATION = "catalogo.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    "default": dj_database_url.config(
-        default="postgresql://postgres:postgres@localhost:5432/catalogoDB",
-        conn_max_age=600,
-    )
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "catalogo",
+        "USER": "root",
+        "PASSWORD": "BqRuiel484Na@#",
+        "HOST": "127.0.0.1",
+        "PORT": "3306",
+    }
 }
 
 
